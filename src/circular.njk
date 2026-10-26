@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: 循环融资
+description: 登记各期简报已经写明的供应商担保、客户信用、股权投资和股权换算力。不补充简报以外的交易。
+permalink: /circular/
+---
+<h1>循环融资</h1>
+<p class="lede">这里登记供应商向客户提供担保、账期、股权投资或股权换算力、客户再购买其设备的安排。只收录各期简报已经写明的事实，链接保持原文。简报没有写到的交易，不在这里补。条目前的类型是归类，具体说法以事实原句为准。</p>
+
+{% for week in circular.weeks %}
+  <section>
+    <h2>{{ week.date | ymd }}</h2>
+    {% if week.brief %}
+      <p><a href="{{ week.brief | url }}">当周简报</a></p>
+    {% endif %}
+    {% if week.note %}<p>{{ week.note }}</p>{% endif %}
+    {% if week.entries and week.entries.length %}
+      <ol class="entries">
+        {% for entry in week.entries %}
+          <li>
+            <p class="kicker">{{ entry.kind }}</p>
+            <p>{{ entry.parties }}</p>
+            <p>{{ entry.fact }}</p>
+            {% if entry.source %}
+              <p><a href="{{ entry.source }}">{{ entry.source }}</a></p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    {% else %}
+      <p>这一周没有新的条目。</p>
+    {% endif %}
+  </section>
+{% endfor %}
+
+<section class="schema">
+  <h2>以后每周怎么追加</h2>
+  <p>在 <code>src/_data/circular.yaml</code> 的 <code>weeks</code> 末尾加一块。没有新事实也加上这一周，把 <code>entries</code> 写成 <code>[]</code>，并在 <code>note</code> 里说明。</p>
+  <pre class="schema-block">{{ circular.sample }}</pre>
+  <ul>
+    <li><code>date</code>：简报日期，格式 YYYY-MM-DD。</li>
+    <li><code>kind</code>：归类，例如担保、供应商信用、股权投资、股权换算力。</li>
+    <li><code>parties</code>：双方。</li>
+    <li><code>fact</code>：简报里的原句，不新写数字。</li>
+    <li><code>source</code>：与简报中完全一致的链接。</li>
+  </ul>
+</section>

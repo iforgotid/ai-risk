@@ -1,0 +1,11 @@
+[
+  { "key": "coreweave_bond_yield", "label": "CoreWeave 债券收益率 / 利差" },
+  { "key": "coreweave_cds", "label": "CoreWeave 5 年期 CDS" },
+  { "key": "ai_borrower_spread_median", "label": "AI 借款人利差中位数" },
+  { "key": "jnk_spread_median", "label": "JNK 高收益债利差中位数" },
+  { "key": "gpu_h100", "label": "GPU 租金 · H100" },
+  { "key": "gpu_h200", "label": "GPU 租金 · H200" },
+  { "key": "gpu_b200", "label": "GPU 租金 · B200" },
+  { "key": "nvda_inventory", "label": "英伟达库存" },
+  { "key": "nvda_receivables", "label": "英伟达应收账款" }
+]
