@@ -1,0 +1,18 @@
+{
+  "name": "ai-risk",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve --port=8080",
+    "check": "node scripts/check.mjs",
+    "test": "npm run build && npm run check"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "js-yaml": "^5.5.0"
+  }
+}

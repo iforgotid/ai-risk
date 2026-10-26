@@ -1,0 +1,27 @@
+# 循环融资记录。每周在 weeks 末尾追加一项。
+# fact 只写当周简报里已经出现的句子，source 原样粘贴。
+# 这一周没有新事实时：entries 写成 []，并用 note 说明。不要填推测。
+
+weeks:
+  - date: "2026-10-26"
+    brief: /briefs/2026-10-26/
+    note: "财务时点是英伟达 FY27Q2，截至 2026-07-26。简报日期是 2026-10-26。"
+    entries:
+      - kind: 担保
+        parties: "英伟达；SB Energy / OpenAI 园区"
+        fact: "担保最高 1085 亿美元，其中 SB Energy / OpenAI 园区 1050 亿美元。"
+        source: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
+      - kind: 供应商信用
+        parties: "英伟达；部分投资级大客户"
+        fact: "应收账款 631 亿美元，DSO 由 45 天升至 60 天，原因是给部分投资级大客户延长账期。应收账款账期拉长和大额担保，意味着英伟达在为客户提供信用。"
+        source: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
+
+sample: |
+  - date: YYYY-MM-DD
+    brief: /briefs/YYYY-MM-DD/
+    note: ""
+    entries:
+      - kind: ""
+        parties: ""
+        fact: ""
+        source: ""

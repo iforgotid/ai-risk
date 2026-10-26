@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: 关键指标
+description: 按周记录 CoreWeave 债券收益率与 CDS、AI 借款人利差中位数、GPU 租金、英伟达库存和应收账款。单元格照抄当周简报。
+permalink: /indicators/
+---
+{% set rows = indicators | byDate %}
+{% set latest = rows | last %}
+
+<h1>关键指标</h1>
+<p class="lede">每一行对应一期简报。单元格照抄当周简报的原话，观察日以格子里写的日期为准。某一周没有新数字就留空，不要把上一行抄下来。</p>
+
+{% if latest %}
+  <section>
+    <h2>最新一周 · {{ latest.date }}</h2>
+    {% if latest.notes %}<p class="note">{{ latest.notes }}</p>{% endif %}
+    <dl class="metrics">
+      {% for field in indicatorFields %}
+        <div>
+          <dt>{{ field.label }}</dt>
+          <dd>{{ latest[field.key] }}</dd>
+        </div>
+      {% endfor %}
+    </dl>
+    {% set urls = latest.sources | splitUrls %}
+    {% if urls.length %}
+      <h3>来源</h3>
+      <ul class="sources">
+        {% for href in urls %}
+          <li><a href="{{ href }}">{{ href }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endif %}
+
+<section>
+  <h2>各周对照</h2>
+  <p class="note">窄屏可以横向滑动。空单元格显示为“—”。</p>
+  <div class="table-wrap">
+    <table class="data">
+      <thead>
+        <tr>
+          <th>日期</th>
+          {% for field in indicatorFields %}
+            <th>{{ field.label }}</th>
+          {% endfor %}
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+          <tr>
+            <td>{{ row.date }}</td>
+            {% for field in indicatorFields %}
+              <td>{{ row[field.key] }}</td>
+            {% endfor %}
+            <td>{{ row.notes }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>

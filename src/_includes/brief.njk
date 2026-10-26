@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+<article class="prose">
+  <p class="kicker">周报 · {{ date | ymd }}</p>
+  <h1>{{ title }}</h1>
+  <p class="lede">{{ summary }}</p>
+  {{ content | safe }}
+  <nav class="pager" aria-label="其他周报">
+    {% set briefs = collections.brief | newestFirst %}
+    {% for item in briefs %}
+      {% if item.url == page.url %}
+        {% if loop.index0 > 0 %}
+          <a href="{{ briefs[loop.index0 - 1].url }}">较新一期 {{ briefs[loop.index0 - 1].date | ymd }}</a>
+        {% endif %}
+        {% if loop.index0 + 1 < briefs.length %}
+          <a href="{{ briefs[loop.index0 + 1].url }}">较早一期 {{ briefs[loop.index0 + 1].date | ymd }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    <a href="{{ '/briefs/' | url }}">全部归档</a>
+  </nav>
+</article>

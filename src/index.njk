@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: AI 融资风险监控
+permalink: /
+---
+{% set brief = collections.brief | newestFirst | first %}
+{% if not brief %}
+  <h1>还没有周报</h1>
+  <p>把第一篇放到 <code>src/briefs/</code>。</p>
+{% else %}
+  {% set systemic = brief.data.judgments | whereGroup("systemic") %}
+  {% set local = brief.data.judgments | whereGroup("local") %}
+  {% set other = brief.data.judgments | whereGroup("other") %}
+
+  <p class="kicker">{{ brief.date | ymd }}</p>
+  <h1>系统性与局部风险</h1>
+  <p class="lede">{{ brief.data.summary }}</p>
+
+  <div class="rating-grid">
+    {% if systemic.length %}
+      <article class="rating tone-{{ systemic[0].tone }}">
+        <h2>系统性</h2>
+        <p class="rating-label">{{ systemic[0].label }}</p>
+        <p>{{ systemic[0].detail }}</p>
+      </article>
+    {% endif %}
+    {% if local.length %}
+      <article class="rating tone-{{ local[0].tone }}">
+        <h2>局部</h2>
+        <p class="rating-label">{{ local[0].label }}</p>
+        <p>{{ local[0].heading }}</p>
+        <p>{{ local[0].detail }}</p>
+      </article>
+    {% endif %}
+  </div>
+
+  {% if local.length > 1 or other.length %}
+    <h2>其余判断</h2>
+    <ul class="rest-list">
+      {% for item in local %}
+        {% if not loop.first %}
+          <li>
+            <p><span class="pill tone-{{ item.tone }}">{{ item.label }}</span> 局部：{{ item.heading }}</p>
+            <p>{{ item.detail }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+      {% for item in other %}
+        <li>
+          <p><span class="pill tone-{{ item.tone }}">{{ item.label }}</span> {{ item.heading }}</p>
+          <p>{{ item.detail }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if brief.data.alerts and brief.data.alerts.length %}
+    <h2>关键警报信号</h2>
+    <ul class="alerts">
+      {% for alert in brief.data.alerts %}
+        <li class="alert tone-{{ alert.tone }}">
+          <h3>{{ alert.title }}</h3>
+          <p>{{ alert.text }}</p>
+          {% if alert.sources %}
+            <ul class="sources">
+              {% for href in alert.sources %}
+                <li><a href="{{ href }}">{{ href }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <p class="note"><a href="{{ '/indicators/' | url }}">关键指标</a>按周留存债券、利差、GPU 租金和英伟达账上数字。<a href="{{ '/circular/' | url }}">循环融资</a>单独登记担保和客户信用。</p>
+
+  <article class="prose" id="latest">
+    <p class="kicker">最新简报 · {{ brief.date | ymd }}</p>
+    <h2>{{ brief.data.title }}</h2>
+    <p class="lede">{{ brief.data.summary }}</p>
+    <p><a href="{{ brief.url }}">独立页面</a></p>
+    {{ brief.content | safe }}
+  </article>
+{% endif %}

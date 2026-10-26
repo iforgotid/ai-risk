@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: 简报归档
+description: 按日期排列的美国 AI 产业链融资风险周报。
+permalink: /briefs/
+---
+<h1>简报归档</h1>
+<p class="lede">一期一个文件。新增一周，把一篇 Markdown 放到 <code>src/briefs/</code>。</p>
+<ol class="archive">
+  {% for item in collections.brief | newestFirst %}
+    <li>
+      <p class="kicker">{{ item.date | ymd }}</p>
+      <h2><a href="{{ item.url }}">{{ item.data.title }}</a></h2>
+      <p>{{ item.data.summary }}</p>
+      {% if item.data.judgments %}
+        <ul class="pill-row">
+          {% for judgment in item.data.judgments %}
+            <li><span class="pill tone-{{ judgment.tone }}">{{ judgment.heading }} · {{ judgment.label }}</span></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ol>

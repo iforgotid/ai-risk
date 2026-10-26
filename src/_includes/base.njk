@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% set latestBrief = collections.brief | newestFirst | first %}
+  {% set desc = description | coalesce(summary, latestBrief, site.tagline) %}
+  {% set docTitle = title | docTitle(site.name) %}
+  <title>{{ docTitle }}</title>
+  <meta name="description" content="{{ desc }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ docTitle }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <link rel="icon" href="{{ '/favicon.svg' | url }}">
+  <link rel="stylesheet" href="{{ '/css/site.css' | url }}">
+</head>
+<body>
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <a class="brand-name" href="{{ '/' | url }}">{{ site.name }}</a>
+        <p class="tagline">{{ site.tagline }}</p>
+      </div>
+      <nav class="nav" aria-label="主导航">
+        <a href="{{ '/' | url }}" {% if page.url == "/" or page.url == ("/" | url) %}aria-current="page"{% endif %}>首页</a>
+        <a href="{{ '/briefs/' | url }}" {% if "/briefs/" in page.url %}aria-current="page"{% endif %}>简报归档</a>
+        <a href="{{ '/indicators/' | url }}" {% if "/indicators/" in page.url %}aria-current="page"{% endif %}>关键指标</a>
+        <a href="{{ '/circular/' | url }}" {% if "/circular/" in page.url %}aria-current="page"{% endif %}>循环融资</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="wrap" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>数字和链接只转写各期周报，不在周报之外另补。</p>
+      {% if latestBrief %}<p>最近一期 {{ latestBrief.date | ymd }}</p>{% endif %}
+    </div>
+  </footer>
+</body>
+</html>
