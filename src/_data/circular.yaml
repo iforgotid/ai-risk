@@ -15,6 +15,26 @@ weeks:
         parties: "英伟达；部分投资级大客户"
         fact: "应收账款 631 亿美元，DSO 由 45 天升至 60 天，原因是给部分投资级大客户延长账期。应收账款账期拉长和大额担保，意味着英伟达在为客户提供信用。"
         source: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
+  - date: "2026-11-02"
+    brief: /briefs/2026-11-02/
+    note: "本周新增：博通为 Anthropic SPV 提供残值支持；英伟达、AMD 认购 Meta 股权融资；亚马逊披露有担保的供应商融资贷款便利；英伟达与 Nscale 的担保仍在洽谈、未签约。未查到英伟达对 OpenAI、CoreWeave、xAI 的新投资或担保。"
+    entries:
+      - kind: 担保
+        parties: "博通；Anthropic 630 亿美元 SPV（美银、花旗、摩根士丹利、Blackstone）"
+        fact: "博通提供残值支持，金额等于第一留置权规模；按 8-K，责任为所欠租金的 72.5% 减去机柜价值，部署完成时最大未折现约 430 亿美元"
+        source: "https://www.sec.gov/Archives/edgar/data/1730168/000119312526434271/d148323d8k.htm"
+      - kind: 股权投资
+        parties: "英伟达、AMD；Meta"
+        fact: "英伟达 30 亿美元，AMD 10 亿美元；同时 Meta 扩大 Vera Rubin 部署，AMD Helios 机柜已在 Meta 运行"
+        source: "https://www.cnbc.com/2026/10/27/nvidia-invest-meta.html"
+      - kind: 担保
+        parties: "英伟达；Nscale 西弗吉尼亚园区（租户 Anthropic）"
+        fact: "英伟达据报正洽谈为 Nscale 西弗吉尼亚园区建设债务提供担保（未签约，金额未披露）"
+        source: "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/"
+      - kind: 供应商信用
+        parties: "亚马逊；未披露的供应商或贷款方"
+        fact: "10-Q 披露供应商融资安排，含一笔有担保贷款便利，2027Q1–2028Q3 期间按需提款，最高约 800 亿美元，浮动利率，每笔 5 年到期，以所购资产设定担保，计入长期债务"
+        source: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
 
 sample: |
   - date: YYYY-MM-DD
