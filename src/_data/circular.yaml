@@ -35,6 +35,22 @@ weeks:
         parties: "亚马逊；未披露的供应商或贷款方"
         fact: "10-Q 披露供应商融资安排，含一笔有担保贷款便利，2027Q1–2028Q3 期间按需提款，最高约 800 亿美元，浮动利率，每笔 5 年到期，以所购资产设定担保，计入长期债务"
         source: "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
+  - date: "2026-11-09"
+    brief: /briefs/2026-11-09/
+    note: "本周新增：谷歌为 TeraWulf Justified 园区的 Anthropic 租约提供信用支持；AMD 10-Q 披露为合作方数据中心提供的担保最高 85 亿美元；AMD 对 OpenAI、Meta 认股权证入账，未确认的 45 亿美元将冲减未来收入。英伟达与 Nscale 的担保仍在洽谈、未签约。未查到英伟达对 OpenAI、CoreWeave、xAI 的新投资或担保。"
+    entries:
+      - kind: 担保
+        parties: "谷歌；TeraWulf Justified 园区（租户 Anthropic）"
+        fact: "支持约 190 亿美元、20 年、约 401MW 的 Anthropic 租约所对应的债务融资。如 Anthropic 付款违约或破产，谷歌可选择付清到期租金并承接租约，或支付终止费（随时间摊销）并取得 Raylan 股权；8-K 未披露终止费金额和担保上限"
+        source: "https://www.sec.gov/Archives/edgar/data/1083301/000162828026069810/wulf-20261104.htm"
+      - kind: 担保
+        parties: "AMD；未披露的商业合作方"
+        fact: "截至 9 月 26 日最大潜在支付 85 亿美元：租约担保 77 亿美元（剩余期限最长 15 年）+ 债务担保 7.5 亿美元（最长 6 个月）；另有拟转租给合作方、尚未起租的数据中心租约 133 亿美元"
+        source: "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/amd-20260926.htm"
+      - kind: 股权换算力
+        parties: "AMD；OpenAI、Meta"
+        fact: "两份认股权证各最多 1.6 亿股、行权价 0.01 美元；9 月 26 日认股权证负债 12 亿美元；未确认的授予日公允价值 45 亿美元，将随相关收入确认按比例冲减收入"
+        source: "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/amd-20260926.htm"
 
 sample: |
   - date: YYYY-MM-DD
