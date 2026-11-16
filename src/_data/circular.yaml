@@ -51,6 +51,27 @@ weeks:
         parties: "AMD；OpenAI、Meta"
         fact: "两份认股权证各最多 1.6 亿股、行权价 0.01 美元；9 月 26 日认股权证负债 12 亿美元；未确认的授予日公允价值 45 亿美元，将随相关收入确认按比例冲减收入"
         source: "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/amd-20260926.htm"
+  - date: "2026-11-16"
+    brief: /briefs/2026-11-16/
+    note: "本周新增：Anthropic 以 IPO 价向 AMD、Broadcom、谷歌、美光、微软、英伟达、台积电私募 260 亿美元（谷歌、英伟达各 100 亿美元）；Nscale S-1/A 新披露英伟达对其 Ward County 租约的担保（最高 8.603 亿美元，协议签于 2025-10-14）及英伟达 10 亿美元认购；黄仁勋辞职后，据 The Information，Kress 曾反对 2500 亿美元 OpenAI 信用支持提议（从未签署），已签的 1050 亿美元俄亥俄担保仍有效。未查到英伟达对 CoreWeave、xAI 的新投资或担保；英伟达与 Nscale 西弗吉尼亚担保洽谈本周未找到进展。"
+    entries:
+      - kind: 股权投资
+        parties: "AMD、Broadcom、谷歌、美光、微软、英伟达、台积电；Anthropic"
+        fact: "以 IPO 价私募 260 亿美元无投票权 N 类股，谷歌和英伟达各 100 亿美元；Anthropic 算力与基础设施承诺 9009 亿美元"
+        source: "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/"
+      - kind: 担保
+        parties: "英伟达；Nscale 得州 Ward County 设施"
+        fact: "英伟达为 Nscale 租约前 5 年付款义务提供担保，最高 8.603 亿美元；Nscale 在托管账户存放 4.7 亿美元作为对英伟达的追索；对价为认股权证。协议签于 2025 年 10 月 14 日，本周 S-1/A 披露"
+        source: "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm"
+      - kind: 股权投资
+        parties: "英伟达等投资人；Nscale"
+        fact: "9 月认购协议共 33.6 亿美元：23.6 亿美元无担保可转换贷款票据（投资人含英伟达），另 10 亿美元向英伟达发行，预计 11 月 16 日前后交割"
+        source: "https://www.sec.gov/Archives/edgar/data/2110365/000119312526458722/ck0002110365-20261112.htm"
+      - kind: 担保
+        parties: "英伟达；OpenAI"
+        fact: "据 The Information，Kress 任 CFO 时反对黄仁勋支持的 2500 亿美元 OpenAI 信用支持提议（从未签署），英伟达预计放缓投资策略；已签的 OpenAI 俄亥俄园区租约担保最高 1050 亿美元仍有效"
+        source: "https://finance.yahoo.com/technology/ai/articles/nvidia-interim-ceo-pushed-back-114212136.html"
+
 
 sample: |
   - date: YYYY-MM-DD

@@ -71,9 +71,11 @@ if (!raw.includes('href="https://iforgotid.github.io/ai-risk/"')) fail("home can
 if (raw.includes("https://iforgotid.github.io/circular")) fail("canonical URL dropped the project path");
 
 const index = decode(fs.readFileSync(path.join(root, "index.html"), "utf8"));
-for (const bit of ["系统性", "低到中", "局部", "CoreWeave 及高杠杆新云", "关键警报信号", "最新简报"]) {
+for (const bit of ["2026-11-16", "系统性", "局部", "CoreWeave 及高杠杆新云", "关键警报信号", "最新简报"]) {
   if (!index.includes(bit)) fail(`homepage missing ${bit}`);
 }
+if (!index.includes('<p class="rating-label">中</p>')) fail("homepage missing systemic rating 中");
+if (!index.includes('<p class="rating-label">高</p>')) fail("homepage missing local CoreWeave rating 高");
 
 const circular = decode(fs.readFileSync(path.join(root, "circular/index.html"), "utf8"));
 for (const bit of ["1085 亿美元", "1050 亿美元", "以后每周怎么追加", "供应商信用", "股权换算力"]) {
