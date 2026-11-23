@@ -71,6 +71,30 @@ weeks:
         parties: "英伟达；OpenAI"
         fact: "据 The Information，Kress 任 CFO 时反对黄仁勋支持的 2500 亿美元 OpenAI 信用支持提议（从未签署），英伟达预计放缓投资策略；已签的 OpenAI 俄亥俄园区租约担保最高 1050 亿美元仍有效"
         source: "https://finance.yahoo.com/technology/ai/articles/nvidia-interim-ceo-pushed-back-114212136.html"
+  - date: "2026-11-23"
+    brief: /briefs/2026-11-23/
+    note: "本周新增：英伟达 FY27Q3 最大担保敞口升至 1180 亿美元（新增 95 亿美元电力与系统信用支持）；新云算力承诺 320 亿美元（摩根士丹利称上季 360 亿），并写明新云未取得融资时可削减或取消；应收账款 810 亿美元、DSO 64 天。Apollo 与 Goldman 为 SpaceX 采购英伟达 Vera Rubin 定价约 440 亿美元票据（第三方出资）。The Bear Cave 汇总 AMD 客户支持安排约 330 亿美元。Nscale 西弗吉尼亚项目的英伟达担保仍在洽谈。未查到英伟达对 OpenAI、CoreWeave、xAI 的新投资或新担保。"
+    entries:
+      - kind: 担保
+        parties: "英伟达；新云、SB Energy / OpenAI 园区及电力与系统融资"
+        fact: "截至 10 月 25 日最大担保敞口 1180 亿美元（上季 1085 亿）：新云土地、电力与厂房 35 亿，SB Energy / OpenAI 园区 1050 亿，新增电力与系统信用支持 95 亿；按楼栋完工逐步生效，迄今未付款"
+        source: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
+      - kind: 算力采购承诺
+        parties: "英伟达；新云"
+        fact: "新云算力承诺 320 亿美元，只有在新云取得采购融资、算力部署并经英伟达验收后才生效，否则可能被削减或取消；英伟达在前期销售设备时确认收入，并可分成新云第三方收入。摩根士丹利称上季为 360 亿美元"
+        source: "https://www.cnbc.com/2026/11/18/nvidia-neocloud-financing.html"
+      - kind: 供应商信用
+        parties: "英伟达；部分投资级大客户"
+        fact: "应收账款 810 亿美元（上季 631 亿），DSO 由 60 天升至 64 天，原因含对部分投资级客户的大额多季度协议延长账期"
+        source: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
+      - kind: 资产支持融资
+        parties: "Apollo、Goldman Sachs 等；SpaceX（采购英伟达 Vera Rubin）"
+        fact: "约 440 亿美元优先与次级票据，用于为 SpaceX 采购英伟达 Vera Rubin GPU 及相关设备，租约预计 2027 年上半年随交付起租；第三方出资，非英伟达自身融资"
+        source: "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+      - kind: 担保
+        parties: "AMD；合作方与 AI 客户"
+        fact: "The Bear Cave 汇总：租约担保最高 85 亿美元、代客户签订 133 亿美元未来数据中心租约、62 亿美元云算力兜底采购、有条件股权投资上限 51 亿美元，合计约 330 亿美元"
+        source: "https://thebearcave.substack.com/p/problems-at-amd-amd"
 
 
 sample: |
